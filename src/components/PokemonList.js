@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import './PokemonList.css';
+
 
 const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([]);
@@ -11,7 +13,25 @@ const PokemonList = () => {
         const pokemonDetails = await Promise.all(
           pokemonIds.map(async (id) => {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-            return await response.json();
+            const pokemonData = await response.json();
+
+            // Fetch additional details (type, stats, and description)
+            const speciesResponse = await fetch(pokemonData.species.url);
+            const speciesData = await speciesResponse.json();
+            const flavorTexts = speciesData.flavor_text_entries.filter(
+              (entry) => entry.language.name === 'en'
+            );
+
+            return {
+              id: pokemonData.id,
+              name: pokemonData.name,
+              base_experience: pokemonData.base_experience,
+              height: pokemonData.height,
+              weight: pokemonData.weight,
+              types: pokemonData.types.map((type) => type.type.name),
+              stats: pokemonData.stats,
+              description: flavorTexts[0].flavor_text, // Using the first English flavor text
+            };
           })
         );
 
@@ -41,7 +61,16 @@ const PokemonList = () => {
                 <p className="card-text">Base Experience: {pokemon.base_experience}</p>
                 <p className="card-text">Height: {pokemon.height}</p>
                 <p className="card-text">Weight: {pokemon.weight}</p>
-                {/* Add more details as needed */}
+                <p className="card-text">Types: {pokemon.types.join(', ')}</p>
+                <p className="card-text">Stats:</p>
+                <ul>
+                  {pokemon.stats.map((stat) => (
+                    <li key={stat.stat.name}>
+                      {stat.stat.name}: {stat.base_stat}
+                    </li>
+                  ))}
+                </ul>
+                <p className="card-text">Description: {pokemon.description}</p>
               </div>
             </div>
           </div>
