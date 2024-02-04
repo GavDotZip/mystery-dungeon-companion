@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Link } from 'react-router-dom';
+import PokemonList from './components/PokemonList'; // Import the PokemonList component
+
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
 
         <hr />
 
-        <Route exact path="/" component={PokemonList} />
+        <Routes exact path="/" component={PokemonList} />
         {/* <Route path="/story-missions" component={StoryMissions} />
         <Route path="/locations" component={Locations} /> */}
       </div>

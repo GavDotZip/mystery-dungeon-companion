@@ -27,8 +27,28 @@ const PokemonList = () => {
   }, []);
 
   return (
-    <div>
-      {/* Card Format Display */}
+    <div className="container mt-5">
+      <h1 className="mb-4">Pokemon List</h1>
+      <div className="row">
+        {pokemonList.map((pokemon) => (
+          <div key={pokemon.id} className="col-md-4 mb-4">
+            <div className="card">
+              <img
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+                className="card-img-top"
+                alt={pokemon.name}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{pokemon.name}</h5>
+                <p className="card-text">Base Experience: {pokemon.base_experience}</p>
+                <p className="card-text">Height: {pokemon.height}</p>
+                <p className="card-text">Weight: {pokemon.weight}</p>
+                {/* Add more details as needed */}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
