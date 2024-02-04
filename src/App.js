@@ -18,8 +18,8 @@ function App() {
         <hr />
 
         <Route exact path="/" component={PokemonList} />
-        <Route path="/story-missions" component={StoryMissions} />
-        <Route path="/locations" component={Locations} />
+        {/* <Route path="/story-missions" component={StoryMissions} />
+        <Route path="/locations" component={Locations} /> */}
       </div>
     </Router>
   );
