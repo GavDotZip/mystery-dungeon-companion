@@ -1,4 +1,3 @@
-// src/components/PokemonList.js
 import React, { useState, useEffect } from 'react';
 
 const PokemonList = () => {
@@ -7,13 +6,12 @@ const PokemonList = () => {
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=30');
-        const data = await response.json();
+        const pokemonIds = [4, 243, 322];
 
         const pokemonDetails = await Promise.all(
-          data.results.map(async (pokemon) => {
-            const detailsResponse = await fetch(pokemon.url);
-            return await detailsResponse.json();
+          pokemonIds.map(async (id) => {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            return await response.json();
           })
         );
 

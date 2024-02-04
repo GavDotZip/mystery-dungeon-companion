@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import PokemonList from './components/PokemonList'; // Import the PokemonList component
 
 
@@ -18,8 +18,9 @@ function App() {
         </nav>
 
         <hr />
-
-        <Routes exact path="/" component={PokemonList} />
+        <Routes>
+          <Route path="/" element={<PokemonList />} />
+        </Routes>
         {/* <Route path="/story-missions" component={StoryMissions} />
         <Route path="/locations" component={Locations} /> */}
       </div>
