@@ -1,56 +1,72 @@
 body {
-    background-image: url(https://i.pinimg.com/originals/83/06/12/830612cf12e174ea1401e2b6fb6789ec.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-  }
-  
-  .container {
-    padding: 20px;
-  }
-  
-  .card {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    padding: 15px;
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .card-text {
-    margin-bottom: 8px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  h1 {
-    color: #fff;
-  }
-  
+  background-image: url(https://i.pinimg.com/originals/83/06/12/830612cf12e174ea1401e2b6fb6789ec.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffd700; /* Gold background color */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid #ffd700; /* Gold border for the image */
+}
+
+.card-body {
+  background-color: #fff; /* White background for text content */
+  border-radius: 0 0 15px 15px; /* Rounded corners only at the bottom */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 8px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-family: "OCR A Std", monospace;
+}
+
+li {
+  margin-bottom: 5px;
+  font-family: "OCR A Std", monospace;
+}
+
+h1 {
+  color: #fff;
+  font-family: "OCR A Std", monospace;
+}
+
+p {
+  font-family: "OCR A Std", monospace;
+}
