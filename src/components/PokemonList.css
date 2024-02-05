@@ -10,6 +10,10 @@ body {
   padding: 20px;
 }
 
+.mb-4 {
+  color: #ffd700;
+}
+
 .card {
   background-color: #ffd700; /* Gold background color */
   border-radius: 15px;
