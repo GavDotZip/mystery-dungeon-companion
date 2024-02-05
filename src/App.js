@@ -1,5 +1,4 @@
-// Importing logo and styles for the App
-import logo from './logo.svg';
+// Importing styles for the App
 import './App.css';
 
 // Importing React and necessary components from react-router-dom
